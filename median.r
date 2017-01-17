@@ -1,0 +1,7 @@
+setwd("E:/30thdecemberThesis")
+re2 <- read.table("Transcript_before_norm.txt",sep = "\t",header=TRUE)
+dataExp <- (re2[, -c(1)])
+head(dataExp)
+output <-sweep(dataExp,1,apply(dataExp,1,median),'-')
+head(output)
+write.table(output, file = "Transcript_after_norm.txt",sep = "\t" )

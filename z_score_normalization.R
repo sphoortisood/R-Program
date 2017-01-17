@@ -1,0 +1,8 @@
+setwd("E:/30thdecemberThesis")
+re2 <- read.table("Transcript_before_norm.txt",sep = "\t",header=TRUE)
+dataExp <- (re2[, -c(1)])
+head(dataExp)
+me <- apply(dataExp,1,scale, center = TRUE, scale = TRUE)
+head(me)
+head(t(me))
+write.table(t(me), file = "output.txt",sep = "\t" )
